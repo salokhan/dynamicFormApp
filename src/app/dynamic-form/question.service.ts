@@ -37,7 +37,7 @@ export class QuestionService {
       new RadioQuestion({
         key: 'radioOption',
         label: 'Options with \'showAgentInfo\' function',
-        value: 'sadsad',
+        value: '',
         type: 'radio',
         function: 'showAgentInfo',
         options: [
@@ -50,9 +50,9 @@ export class QuestionService {
         order: 1
       }),
       new RadioQuestion({
-        key: 'radioOption',
+        key: 'radioOption1',
         label: 'Options with \'myFunction\' ',
-        value: 'sadsad',
+        value: '',
         type: 'radio',
         function: 'myFunction',
         options: [
@@ -65,9 +65,9 @@ export class QuestionService {
         order: 1
       }),
       new RadioQuestion({
-        key: 'radioOption',
+        key: 'radioOption2',
         label: 'Options with \'yourFunction\' function',
-        value: 'sadsad',
+        value: '',
         type: 'radio',
         function: 'yourFunction',
         options: [
