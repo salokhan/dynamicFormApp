@@ -1,0 +1,24 @@
+<div [formGroup]="form">
+  <label [attr.for]="question.key">{{question.label}}</label>
+
+  <div [ngSwitch]="question.controlType">
+
+    <input *ngSwitchCase="'textbox'" [formControlName]="question.key" [id]="question.key" [type]="question.type">
+
+    <ng-container *ngSwitchCase="'radio'">
+      <div *ngFor="let item of question.options; index as i">
+        <!-- <input type="radio" name="question.key" [formControlName]="item.key" [value]="item.value"> -->
+        <input type="radio" id="" [name]="question.key" [formControlName]="question.key" [value]="item.value" (click) ="radioFunction($event)">
+        <label class="custom-control-label" for="item.value">{{item.key}}</label>
+      </div>
+    </ng-container>
+
+
+    <select [id]="question.key" *ngSwitchCase="'dropdown'" [formControlName]="question.key">
+      <option *ngFor="let opt of question.options" [value]="opt.key">{{opt.value}}</option>
+    </select>
+
+  </div>
+  <hr class="dotted">
+  <div class="errorMessage" *ngIf="!isValid">{{question.label}} is required</div>
+</div>
